@@ -17,7 +17,8 @@ def get_rgb(dir):
     return ret
 
 
-
 dir = r"C:\Users\elias\OneDrive\Työpöytä\Code\ml\Retinal-veinmapping\Dataset/test/images/"
 
 print(get_rgb(dir))
+
+
