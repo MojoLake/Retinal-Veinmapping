@@ -12,7 +12,8 @@ e_path = r"C:\Users\elias\OneDrive\Työpöytä\code\ml\Retinal-Veinmapping\Datas
 
 def parse_image(img_path: str) -> dict:
     image = tf.io.read_file(img_path)
-    tfio.experimental.image.decode_tiff(image)
+    image_tensor = tfio.experimental.image.decode_tiff(image)
+    return image_tensor
 
 
-parse_image(e_path)
+print(parse_image(e_path)[250][250])
