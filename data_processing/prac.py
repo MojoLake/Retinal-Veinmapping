@@ -20,10 +20,10 @@ path = pathlib.Path(PATH)
 
 def load(num): # returns tensor of image
 
-    real = tf.io.read_file(f"{path}\gifimages/{num}_training.gif")
+    real = tf.io.read_file(f"{path}\gifimages/{num}_training.jpg")
     real = tf.io.decode_image(real, expand_animations=False)
 
-    target = tf.io.read_file(fr"{path}\1st_manual/{num}_manual1.gif")
+    target = tf.io.read_file(fr"{path}\1st_manualjpg/{num}_manual1.jpg")
     target = tf.io.decode_image(target, expand_animations=False)
 
     return tf.cast(real, tf.float32), tf.cast(target, tf.float32)
