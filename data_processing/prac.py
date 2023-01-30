@@ -4,17 +4,18 @@ import os
 import pathlib
 import time
 import datetime
-
+import pydot
+import graphviz
 from matplotlib import pyplot as plt
 
 
 from IPython import display
 
 
-PATH = r"C:\Users\elias\ML\Retinal-Veinmapping\Dataset\training"
+EPATH = r"C:\Users\elias\ML\Retinal-Veinmapping\Dataset\training"
+RPATH = r"C:\Users\robin\OneDrive\Työpöytä\Retinas\Retinal-Veinmapping\Dataset\training"
 
-
-path = pathlib.Path(PATH)
+path = pathlib.Path(RPATH)
 
 
 
@@ -68,7 +69,7 @@ def normalize(input_image, real_image):
 @tf.function()
 def random_jitter(input_image, real_image):
   # Resizing to 286x286
-  input_image, real_image = resize(input_image, real_image, IMG_HEIGHT, IMG_WIDTH)
+  input_image, real_image = resize(input_image, real_image, IMG_HEIGHT, IMG_HEIGHT)
 
   # Random cropping back to 256x256
   input_image, real_image = random_crop(input_image, real_image)
@@ -232,4 +233,7 @@ def Generator():
 
 
 generator = Generator()
-tf.keras.utils.plot_model(generator, show_shapes=True, dpi=64)
+#tf.keras.utils.plot_model(generator, show_shapes=True, dpi=64)
+
+gen_output = generator(inp[tf.newaxis, ...], training=False)
+plt.imshow(gen_output[0, ...])
