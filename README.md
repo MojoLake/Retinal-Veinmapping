@@ -1,2 +1,2 @@
 # Retinal-Veinmapping
-Retinial veinmapping with neural networks.
+Retinal veinmapping with neural networks.
