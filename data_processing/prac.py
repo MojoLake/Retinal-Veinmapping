@@ -14,8 +14,7 @@ from IPython import display
 
 PATH = r"C:\Users\elias\ML\Retinal-Veinmapping\Dataset"
 
-
-path = pathlib.Path(PATH)
+path = pathlib.Path(RPATH)
 
 
 
