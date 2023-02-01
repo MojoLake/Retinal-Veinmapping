@@ -16,7 +16,7 @@ from discriminator import Discriminator, discriminator_loss
 
 
 # the path from which the training data is found
-PATH = r"C:\Users\elias\ML\Retinal-Veinmapping\Dataset"
+PATH = r""
 
 path = pathlib.Path(PATH)
 
