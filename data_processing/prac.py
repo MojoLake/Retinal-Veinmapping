@@ -14,7 +14,7 @@ from IPython import display
 
 PATH = r"C:\Users\elias\ML\Retinal-Veinmapping\Dataset"
 
-path = pathlib.Path(RPATH)
+path = pathlib.Path(PATH)
 
 
 
@@ -264,8 +264,8 @@ plt.imshow(gen_output[0, ...])
 plt.show()
 
 
-
-LAMBDA = 100
+# original 100
+LAMBDA = 10
 
 
 loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=True)
@@ -353,6 +353,9 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
 def generate_images(model, test_input):
   prediction = model(test_input, training=True)
   plt.figure(figsize=(15, 15))
+  # plt.imshow(prediction[0] * 0.5 + 0.5)
+  # plt.axis('off')
+  # plt.show()
 
   display_list = [test_input[0], prediction[0]]
   title = ['Input Image', 'Predicted Image']
@@ -441,10 +444,18 @@ def fit(train_ds, test_ds, steps):
 
 
     # Save (checkpoint) the model every 5k steps
-    if (step + 1) % 5 == 0:
+    if (step + 1) % 200 == 0:
       checkpoint.save(file_prefix=checkpoint_prefix)
 
 
 
 fit(train_dataset, test_dataset, steps=40000)
+# print(tf.train.latest_checkpoint(checkpoint_dir))
+# checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
+
+# for x in test_dataset.take(20):
+#   x = x[:,:,:,:3]
+#   generate_images(generator, x)
+
+
 
