@@ -6,10 +6,10 @@ import tensorflow_io as tfio
 from pathlib import Path
 
 
-r_path = r"C:\Users\robin\OneDrive\Työpöytä\Retinas\Retinal-Veinmapping\Dataset\training\gifimages"
-e_path = "C:\\Users\\elias\\ML\\Retinal-veinmapping\\dataset\\training\\1st_manual"
+r_path = r""
+e_path = ""
 
-r_path2= r"C:\Users\robin\OneDrive\Työpöytä\Retinas\Retinal-Veinmapping\Dataset\training\gifimages\21_training.gif"
+r_path2= r""
 
 # data_dir = pathlib.Path(r_path).with_suffix('')
 
