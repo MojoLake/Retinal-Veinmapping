@@ -12,7 +12,7 @@ from matplotlib import pyplot as plt
 from IPython import display
 
 
-PATH = r"C:\Users\elias\ML\Retinal-Veinmapping\Dataset"
+PATH = r""
 
 path = pathlib.Path(PATH)
 
